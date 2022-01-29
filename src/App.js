@@ -12,17 +12,13 @@ function App() {
   const cardElements = data.map(elem => {
     return <Card 
     key={elem.id}
-    img={elem.coverImg}
-    rating={elem.stats.rating} 
-    reviewCount={elem.stats.reviewCount} 
-    country={elem.location} 
-    title={elem.title}
-    price={elem.price}
+    {...elem}
     />
   })
   return (
     <div>
       <Navbar />
+      <Hero />
       <section className='card-list'>
         {cardElements}
       </section>
